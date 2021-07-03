@@ -1,3 +1,4 @@
+require 'pry'
 class Project
     attr_reader :title
 
@@ -12,5 +13,6 @@ class Project
     def backers
         backer_array = ProjectBacker.all.select {|pb| pb.project == self}
         backer_array.map { |pb| pb.backer }
+        binding.pry
     end
 end
